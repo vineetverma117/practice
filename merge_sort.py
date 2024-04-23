@@ -1,3 +1,5 @@
+#Best case /Average case /Worst case = O(nlogn)
+#extra space = O(n) for merge. Not a in-place sort.
 class MergeSort:
     
     def merge(self, A, B):
