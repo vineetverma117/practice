@@ -17,6 +17,7 @@ class MatrixMul:
         return result
         
     def multiply_by_numpy(self, A, B):
+        #using python numpy library
         return num.dot(A, B)
         
     def multiply_custom(self, A, B):
@@ -47,7 +48,7 @@ class MatrixMul:
             B = self.matrix_power(A, power/2)
             return self.multiply_custom(B, B)
         elif power%2 == 1:
-            #B = self.matrix_power(A, self.power-1)
+            # operator // will return floor value
             B = self.matrix_power(A, power//2)
             return self.multiply_custom(A, self.multiply_custom(B, B))
             
