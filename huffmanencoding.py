@@ -50,7 +50,16 @@ if __name__ == '__main__':
     nodes = []
     obj = HuffmanTree()
     obj.convert_into_huffman_nodes(nodes, chars, freq)
-    print(len(nodes))
     obj.build_huffman_tree(nodes)
-    print(len(nodes))
     obj.printEncoding(nodes[0], '')
+
+
+"""
+Output:
+f: 0
+c: 100
+d: 101
+a: 1100
+b: 1101
+e: 111
+"""
