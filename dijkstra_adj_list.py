@@ -16,7 +16,7 @@ class Graph:
         
         dist = [sys.maxsize] * self.V
         dist[src] = 0
-        
+        parent = [None]*self.V #only if you want to print path
         while heap:
             d, u = heapq.heappop(heap)
             
@@ -24,10 +24,16 @@ class Graph:
                 if dist[v] > dist[u] + weight:
                     dist[v] = dist[u] + weight
                     heapq.heappush(heap, (dist[v], v))
+                    parent[v] = u #use only if you want to print path
                     
         for i in range(self.V):
             print(f"{i} \t\t {dist[i]}")
-        
+        self.print_path(parent)    
+            
+    def print_path(self, parent):
+        for i in range(1, self.V):
+            print(f"{parent[i]}---> {i}")
+            
 # Driver's code
 if __name__ == "__main__":
     V = 9
