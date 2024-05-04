@@ -89,7 +89,18 @@ class LinkedList:
             if current_node != None:
                 current_node.next = current_node.next.next
             else:
-                print("Index not present")    
+                print("Index not present")
+
+    def getMiddleLL(self):
+        if self.head == None:
+            return
+        current_node = self.head
+        q = self.head
+        
+        while(current_node != None and current_node.next != None and current_node.next.next != None):
+            current_node = current_node.next.next
+            q = q.next
+        return q 
 
     def sizeOfLL(self):
         size = 0
@@ -121,7 +132,10 @@ llist.insertAtIndex('g', 2)
 # print the linked list
 print("Node Data")
 llist.printLL()
-
+mid = llist.getMiddleLL()
+if mid:
+    print(f"middle: {mid.data}")
+    
 print("\nRemove First Node")
 llist.remove_first_node()
 print("Remove Last Node")
